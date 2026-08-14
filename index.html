@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f2ea" />
+  <title>האפליקציות שלי</title>
+  <style>
+    :root{
+      --bg:#f7f2ea;
+      --card:#fffdf9;
+      --text:#252525;
+      --muted:#77716b;
+      --border:rgba(37,37,37,.08);
+      --shadow:0 10px 30px rgba(60,45,30,.08);
+    }
+
+    *{box-sizing:border-box}
+    html{-webkit-tap-highlight-color:transparent}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Arial, "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 85% 5%, #fff4d8 0, transparent 30%),
+        radial-gradient(circle at 10% 90%, #e9f4ee 0, transparent 28%),
+        var(--bg);
+    }
+
+    .wrap{
+      width:min(560px, 100%);
+      margin:0 auto;
+      padding:38px 18px calc(32px + env(safe-area-inset-bottom));
+    }
+
+    header{
+      text-align:center;
+      margin-bottom:28px;
+    }
+
+    .logo{
+      width:72px;
+      height:72px;
+      margin:0 auto 14px;
+      border-radius:24px;
+      display:grid;
+      place-items:center;
+      font-size:34px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+    }
+
+    h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-.5px;
+    }
+
+    .subtitle{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .card{
+      min-height:156px;
+      padding:20px 16px;
+      border-radius:24px;
+      background:var(--card);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      color:inherit;
+      text-decoration:none;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:space-between;
+      transition:transform .16s ease, box-shadow .16s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:active{
+      transform:scale(.975);
+      box-shadow:0 6px 16px rgba(60,45,30,.07);
+    }
+
+    .icon{
+      width:52px;
+      height:52px;
+      border-radius:17px;
+      display:grid;
+      place-items:center;
+      font-size:27px;
+    }
+
+    .home .icon{background:#e8f1ff}
+    .finance .icon{background:#e8f7ee}
+    .care .icon{background:#fff0f3}
+    .shifts .icon{background:#fff4d9}
+
+    .name{
+      font-size:18px;
+      font-weight:700;
+      line-height:1.25;
+      margin-top:18px;
+    }
+
+    .go{
+      position:absolute;
+      left:15px;
+      bottom:14px;
+      color:#aaa39b;
+      font-size:20px;
+    }
+
+    .archive{
+      margin-top:30px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+      text-align:center;
+    }
+
+    .archive-label{
+      color:#aaa39b;
+      font-size:11px;
+      margin-bottom:10px;
+    }
+
+    .past-link{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      color:#9b958e;
+      text-decoration:none;
+      font-size:13px;
+      padding:8px 12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.45);
+    }
+
+    .past-link:active{transform:scale(.98)}
+
+    footer{
+      text-align:center;
+      color:#aaa39b;
+      font-size:12px;
+      margin-top:18px;
+    }
+
+    @media (max-width:370px){
+      .grid{grid-template-columns:1fr}
+      .card{min-height:120px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .card{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">✨</div>
+      <h1>האפליקציות שלי</h1>
+      <p class="subtitle">הכול במקום אחד</p>
+    </header>
+
+    <section class="grid" aria-label="קישורים לאפליקציות">
+      <a class="card home" href="https://avivissta-commits.github.io/home/" target="_self">
+        <div class="icon" aria-hidden="true">🏠</div>
+        <div class="name">אפליקציית בית</div>
+        <span class="go" aria-hidden="true">←</span>
+      </a>
+
+      <a class="card finance" href="https://avivissta-commits.github.io/Finance/index.html" target="_self">
+        <div class="icon" aria-hidden="true">💰</div>
+        <div class="name">אפליקציה פיננסית</div>
+        <span class="go" aria-hidden="true">←</span>
+      </a>
+
+      <a class="card care" href="https://avivissta-commits.github.io/Mami-Care/" target="_self">
+        <div class="icon" aria-hidden="true">🌸</div>
+        <div class="name">טיפוח</div>
+        <span class="go" aria-hidden="true">←</span>
+      </a>
+
+      <a class="card shifts" href="https://avivissta-commits.github.io/mishmarot/" target="_self">
+        <div class="icon" aria-hidden="true">📅</div>
+        <div class="name">משמרות יוסי</div>
+        <span class="go" aria-hidden="true">←</span>
+      </a>
+    </section>
+
+    <section class="archive" aria-label="קישורים מהעבר">
+      <div class="archive-label">מהעבר</div>
+      <a class="past-link" href="https://avivissta-commits.github.io/TIUL/" target="_self">
+        <span aria-hidden="true">🧳</span>
+        <span>טיול</span>
+      </a>
+    </section>
+
+    <footer>לחיצה על כרטיס פותחת את האפליקציה</footer>
+  </main>
+</body>
+</html>
