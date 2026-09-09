@@ -70,6 +70,11 @@
       gap:14px;
     }
 
+    /* אם הכרטיס האחרון נשאר לבד בשורה — מותחים אותו לרוחב מלא */
+    .grid > .card:last-child:nth-child(odd){
+      grid-column:1 / -1;
+    }
+
     .card{
       min-height:156px;
       padding:20px 16px;
@@ -106,6 +111,7 @@
     .finance .icon{background:#e8f7ee}
     .care .icon{background:#fff0f3}
     .shifts .icon{background:#fff4d9}
+    .habis .icon{background:#efe8ff}
 
     .name{
       font-size:18px;
@@ -196,6 +202,12 @@
       <a class="card shifts" href="https://avivissta-commits.github.io/mishmarot/" target="_self">
         <div class="icon" aria-hidden="true">📅</div>
         <div class="name">משמרות יוסי</div>
+        <span class="go" aria-hidden="true">←</span>
+      </a>
+
+      <a class="card habis" href="https://habis.avivissta.workers.dev/" target="_self">
+        <div class="icon" aria-hidden="true">🍔</div>
+        <div class="name">הביס</div>
         <span class="go" aria-hidden="true">←</span>
       </a>
     </section>
